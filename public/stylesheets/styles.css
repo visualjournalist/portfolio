@@ -178,7 +178,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#menu #dropdown {display: none;}
 
 
-
+.portfolioGrid .description h2{font-size: .8em; margin-top: 5px !important; color: #333;}
 
 	body{font-size:1.3em;}
 	/*#container img{width: 45%; float:right; padding: 0 20px;}*/
