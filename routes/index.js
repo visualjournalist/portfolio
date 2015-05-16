@@ -29,16 +29,77 @@ router.get('/', function(req, res, next) {
 	var portfolioData = global.portfolio.sitewide;
 
 
+	var randomProjectNumber = Math.floor(portfolioData.length*Math.random());
+	var projectData = portfolioData[randomProjectNumber];
+	projectData.descriptionSplit = splitParagraphs(projectData.description);
+
+	var verticalImage = '';
+	if (projectData.verticalimage == 'TRUE'){
+		verticalImage = 'verticalImage';
+	}
+	/*
+	console.log(global.categories);
+	var promos = [];
+	var counter = 0; 
+	var promoCount = 0;
+	var categoryCount = 0;
+	var promoCountLimit = 6;
+
+	function addCategories(cat){
+		console.log('addCategoriesx '+portfolioData[counter].category + '  x ' + cat);
+		if (portfolioData[counter].category==cat&&counter<2){
+			promos.push(portfolioData[counter]);
+			counter++;
+			addCategories(counter);
+			console.log('-------')
+			console.log(promos);
+		} else if (counter < 2 && categoryCount < global.categories.length){
+			console.log('else if')
+			categoryCount++;
+			promoCount++;
+			counter = 0;
+			addPromos(promoCountLimit);
+		} else if (categoryCount < global.categories.length){
+			categoryCount++;
+			addCategories(global.categories[categoryCount])
+		}
+	}
+
+	function addPromos(promoCountLimit){
+		if(promoCount<promoCountLimit){
+			console.log('global.categories[categoryCount] '+ global.categories[categoryCount]);
+			addCategories(global.categories[categoryCount]);
+		}
+	}
+	addPromos(promoCountLimit);
+	*/
+
+
+
 	res.render('index', { 
 		data: data,
 		portfolioData: portfolioData,
+		projectData: projectData,
+		verticalImage: verticalImage,
 		featuredNumber: featuredNumber,
 		category: 'showAll',
-		loopLimit: 3,
+		loopLimit: 6,
 		description: splitParagraphs(data[0].biography)
 	});
 });
 
+
+/* GET about page. */
+router.get('/about', function(req, res, next) {
+	var data = global.site.sitewide;
+	var portfolioData = global.portfolio.sitewide;
+
+	res.render('about', { 
+		data: data,
+		portfolioData: portfolioData,
+		description: splitParagraphs(data[0].biography)
+	});
+});
 
 
 /* GET portfolio page. Show all. */
