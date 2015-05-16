@@ -70,7 +70,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #container .floatLeft.category.animation, #container .floatLeft.category.video{background-color: #70ccef;}
 
 #container h3{font-weight: normal;}
-#container h3, #container h2{width: 90%;margin:0;padding:0 5%;}
+#container h3, #container h2{width: 100%;margin:0;padding:0}
+#container h2.headline{padding: 0 5%; width: 90%;}
 .entry {margin-top:35px 0; padding: 35px 0; /*border-bottom: 1px solid #CCC;*/}
 #container .description {margin-top: 10px; width: 100%;margin:0; padding:0; /*padding:0 7%;*/}
 #container .entry h1, #container .entry h2 {font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; line-height: 1.3em;margin-top:15px;text-align: center;}
