@@ -32,53 +32,26 @@ router.get('/', function(req, res, next) {
 	var randomProjectNumber = Math.floor(portfolioData.length*Math.random());
 	var projectData = portfolioData[randomProjectNumber];
 	projectData.descriptionSplit = splitParagraphs(projectData.description);
+	var currentCategory = projectData.category;
 
 	var verticalImage = '';
 	if (projectData.verticalimage == 'TRUE'){
 		verticalImage = 'verticalImage';
 	}
-	/*
-	console.log(global.categories);
+
+
 	var promos = [];
-	var counter = 0; 
-	var promoCount = 0;
-	var categoryCount = 0;
-	var promoCountLimit = 6;
-
-	function addCategories(cat){
-		console.log('addCategoriesx '+portfolioData[counter].category + '  x ' + cat);
-		if (portfolioData[counter].category==cat&&counter<2){
-			promos.push(portfolioData[counter]);
-			counter++;
-			addCategories(counter);
-			console.log('-------')
-			console.log(promos);
-		} else if (counter < 2 && categoryCount < global.categories.length){
-			console.log('else if')
-			categoryCount++;
-			promoCount++;
-			counter = 0;
-			addPromos(promoCountLimit);
-		} else if (categoryCount < global.categories.length){
-			categoryCount++;
-			addCategories(global.categories[categoryCount])
+	for (k=0; k<portfolioData.length; k++){
+		if(portfolioData[k].projectnumber!=portfolioData[randomProjectNumber].projectnumber){
+			promos.push(portfolioData[k]);
 		}
 	}
-
-	function addPromos(promoCountLimit){
-		if(promoCount<promoCountLimit){
-			console.log('global.categories[categoryCount] '+ global.categories[categoryCount]);
-			addCategories(global.categories[categoryCount]);
-		}
-	}
-	addPromos(promoCountLimit);
-	*/
 
 
 
 	res.render('index', { 
 		data: data,
-		portfolioData: portfolioData,
+		portfolioData: promos,
 		projectData: projectData,
 		verticalImage: verticalImage,
 		featuredNumber: featuredNumber,
