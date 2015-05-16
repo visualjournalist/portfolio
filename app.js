@@ -15,6 +15,8 @@ var jf = require('jsonfile');
 var Tabletop = require('tabletop');
 var spreadsheet_URL = config.spreadsheet;
 
+app.locals.analytics = config.analytics;
+global.categories = config.categories;
 
 //A simple function for reading files.
 function readJSONFile( path ){
