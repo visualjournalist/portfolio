@@ -148,10 +148,12 @@ router.get('/project/:number/', function(req, res, next) {
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
 	var projectData;
+	var currentCategory;
 	for (var k=0; k<portfolioData.length; k++){
 		if(portfolioData[k].projectnumber==featuredNumber){
 			projectData = portfolioData[k];
 			projectData.descriptionSplit = splitParagraphs(projectData.description);
+			currentCategory = projectData.category;
 		}
 	}
 	var verticalImage = '';
@@ -159,9 +161,18 @@ router.get('/project/:number/', function(req, res, next) {
 		verticalImage = 'verticalImage';
 	}
 
+
+	var promos = [];
+	for (k=0; k<portfolioData.length; k++){
+		if(portfolioData[k].category==currentCategory&&portfolioData[k].projectnumber!=featuredNumber){
+			promos.push(portfolioData[k]);
+		}
+	}
+
+
 	res.render('project', { 
 		data: data,
-		portfolioData: portfolioData,
+		portfolioData: promos,
 		projectData: projectData,
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,

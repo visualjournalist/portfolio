@@ -164,7 +164,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.portfolioGrid{width:47%; margin: 0 1% 20px 1%; display: inline-block; vertical-align: top; border-top: none;}
 	#container .portfolioGrid .description{float:none;width:100%; margin: 0; padding:0;}
 	#container .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
-	#container .entry .verticalImage {width: 45%; float: left; margin-right:5%;}
+	#container .entry .verticalImage {width: 49%; float: left; margin-right:3%;}
 	.portfolioGrid a {text-decoration: none;}
 	.portfolioGrid:hover h2{text-decoration: underline;}
 	#container .portfolioGrid .square {
