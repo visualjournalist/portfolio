@@ -52,6 +52,7 @@ router.get('/', function(req, res, next) {
 	res.render('index', { 
 		data: data,
 		portfolioData: promos,
+		portfolioDescription: '',
 		projectData: projectData,
 		verticalImage: verticalImage,
 		featuredNumber: featuredNumber,
@@ -70,6 +71,7 @@ router.get('/about', function(req, res, next) {
 	res.render('about', { 
 		data: data,
 		portfolioData: portfolioData,
+		portfolioDescription: '',
 		description: splitParagraphs(data[0].biography)
 	});
 });
@@ -82,9 +84,11 @@ router.get('/portfolio/', function(req, res, next) {
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
 
+
 	res.render('portfolio', { 
 		data: data,
 		portfolioData: portfolioData,
+		portfolioDescription: '',
 		featuredNumber: featuredNumber,
 		category: 'showAll',
 		loopLimit: portfolioData.length,
@@ -107,6 +111,7 @@ router.get('/portfolio/:category/', function(req, res, next) {
 	res.render('portfolio', { 
 		data: data,
 		portfolioData: portfolioData,
+		portfolioDescription: splitParagraphs(data[0][category]),
 		category: category,
 		loopLimit: portfolioData.length,
 		description: splitParagraphs(data[0].biography)
@@ -147,6 +152,7 @@ router.get('/project/:number/', function(req, res, next) {
 		data: data,
 		portfolioData: promos,
 		projectData: projectData,
+		portfolioDescription: '',
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,
 		category: 'showAll',
@@ -170,6 +176,7 @@ router.get('/blog/', function(req, res, next) {
 	res.render('blog', { 
 		data: data,
 		blogData: blogData,
+		portfolioDescription: '',
 		description: splitParagraphs(data[0].biography)
 	});
 });

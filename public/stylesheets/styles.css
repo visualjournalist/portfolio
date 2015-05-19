@@ -95,30 +95,45 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 
 .portfolioGrid{width:100%; margin:0; display: block;border-top: 1px solid #CCC;cursor: pointer; cursor: hand; }
-#container .portfolioGrid .description{float:right;width:69%; margin: 0 5% 0 0; padding:0;}
-.portfolioGrid .description h2{font-family: arial, sans-serif; font-size: 1em; line-height: 1.1em; text-align: left;margin:0; padding:0;}
+#container .portfolioGrid .description{float:none;width:100%; margin: 0; padding:0;}
+#container .portfolioGrid .description h2{font-family: arial, sans-serif; font-size: 1em; line-height: 1.1em; text-align: left;margin:5px 0 0 0; padding:0; color: #333;}
 .portfolioGrid .description h3{font-family: 'Oswald', arial, sans-serif; font-size: .8em; text-transform: uppercase; color:orange; margin:0;padding:5px 0 0 0;}
+.portfolioGrid:hover h2{text-decoration: underline;}
+#container .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
+
+
 #container .portfolioGrid .square {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	vertical-align:top;
-    background-color: #999;
-    background-size: cover;
-    background-position: center;
-    width: 18%;
-    display: inline-block;
-    position: relative;
-    float:left;
-    margin:5px;
-    margin-left:5%;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;
+	background-color: #999;
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	width: 100%;
+	margin:0;
+	display: inline-block;
+	position: relative;
+	float: none;
 }
-#container .portfolioGrid .square img.squareImg{display: block;}
-#container .portfolioGrid .square img.rectangleImg{display: none;}
-#container .portfolioGrid .square img{width: 100%; height: auto; margin-top:0;}
+
+/*#container .portfolioGrid .square img.squareImg{display: none;}*/
+#container .portfolioGrid .square img.rectangleImg{display: block;}
+#container .portfolioGrid .square img{width: 100%; height: auto; margin-top:0; display:none;}
+
+
+#containerGrid{padding: 0; display: block;}
+#containerGrid .inset{width:92%; margin: 0 4%;}
+.portfolioGrid{width:98%; margin: 0 1% 20px 1%; display: inline-block; vertical-align: top; border-top: none;}
+.portfolioGrid a {text-decoration: none;}
+
+
+
 
 /*problem with box sizing*/
 /*.portfolioGrid:hover .square{border:4px solid orange;}*/
@@ -177,10 +192,11 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	}
 	#container .portfolioGrid .square img.squareImg{display: none;}
 	#container .portfolioGrid .square img.rectangleImg{display: block;}
+	.portfolioGrid .description h2{font-size: .8em; margin-top: 5px !important; color: #333;}
+
 	#menu #dropdown {display: none;}
 
 
-	.portfolioGrid .description h2{font-size: .8em; margin-top: 5px !important; color: #333;}
 
 	body{font-size:1.3em;}
 	/*#container img{width: 45%; float:right; padding: 0 20px;}*/
@@ -231,15 +247,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#sharingLinks a#twitter{background: url(../images/share_twitter_color.gif)}
 
 	#sharingLinks{position: fixed; width:1059px; right:auto; top:150px;}
-	#sharingLinks .box{width: 35px;float:right;background-color: #999;}
+	#sharingLinks .box{width: 35px;float:right; /*background-color: #999;*/}
 	#sharingLinks a{display: block;float:none; }
-
-
-	/*
-	#header{display: inline-block; width: 25%; vertical-align: top; margin-left: auto;}
-	#header .column{display: block; width:100%;}
-	#container{display: inline-block; width: 70%;}
-	*/
 
 }
 @media print {

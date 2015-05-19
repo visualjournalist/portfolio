@@ -1,6 +1,10 @@
 <div id='header'>
 	<div class='column bio'>
-		<p><img src='<%= data[0].mugshot %>'/><%= data[0].biography %></p>
+		<% if (portfolioDescription!='') { %>
+			<%- portfolioDescription %></p>
+			<% } else{ %>
+			<%- description %>
+			<% } %>
 	</div>
 	<div class='column follow'>
 		<h3>On the site</h3>
