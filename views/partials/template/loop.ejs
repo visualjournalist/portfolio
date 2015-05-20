@@ -3,7 +3,7 @@
 		<% if (portfolioData[i].category==category||category=='showAll'){ %>
 			<% if (counter<loopLimit) { %>
 				<div class='portfolioGrid portfolioPiece' data-portfolio-number=<%= i %> >
-					<a href='/project/<%= portfolioData[i].projectnumber%>#projectEntry'>
+					<a href='/project/<%= portfolioData[i].projectnumber%>#container'>
 						<div class='square' style='background-image: url(/images/thumb_<%=portfolioData[i].imagebase %>.jpg);'>
 							<img src="/images/square_transparent.png" class='squareImg'/>
 							<img src="/images/rectangle_transparent.png" class='rectangleImg'/>
