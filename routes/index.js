@@ -15,6 +15,18 @@ function splitParagraphs(source){
 	return splitGraphs
 }
 
+function splitFirstParagraphs(source){
+	var splitGraphs = '';
+
+	var paragraphs = source;
+	paragraphs = paragraphs.split('\n')
+
+	for (var i = 0; i<2; i++){
+		splitGraphs += '<p>' + paragraphs[i] + '</p>';
+	}
+	return splitGraphs
+}
+
 
 
 /* GET home page. */
@@ -168,7 +180,7 @@ router.get('/blog/', function(req, res, next) {
 	var blogData = global.blog.sitewide;
 
 	for (var j=0; j<blogData.length; j++){
-		var splitPost = splitParagraphs(blogData[j].post);
+		var splitPost = splitFirstParagraphs(blogData[j].post);
 		blogData[j].postSplit = splitPost;
 	}
 
@@ -180,6 +192,49 @@ router.get('/blog/', function(req, res, next) {
 		description: splitParagraphs(data[0].biography)
 	});
 });
+
+/* GET project page. */
+router.get('/blog/:number/', function(req, res, next) {
+	var featuredNumber = req.params.number;
+
+	var data = global.site.sitewide;
+	var blogData = global.blog.sitewide;
+	var blogPostData;
+	var currentCategory;
+	for (var k=0; k<blogData.length; k++){
+		if(blogData[k].postnumber==featuredNumber){
+			blogPostData = blogData[k];
+			blogPostData.descriptionSplit = splitParagraphs(blogPostData.post);
+			currentCategory = blogPostData.category;
+		}
+	}
+	var verticalImage = '';
+	if (blogPostData.verticalimage == 'TRUE'){
+		verticalImage = 'verticalImage';
+	}
+
+	/*
+	var promos = [];
+	for (k=0; k<blogData.length; k++){
+		if(blogData[k].category==currentCategory&&blogData[k].projectnumber!=featuredNumber){
+			promos.push(blogData[k]);
+		}
+	}
+	*/
+
+
+	res.render('blogpost', { 
+		data: data,
+		projectData: blogPostData,
+		portfolioDescription: '',
+		featuredNumber: featuredNumber,
+		verticalImage: verticalImage,
+		category: 'showAll',
+		loopLimit: 3,
+		description: splitParagraphs(data[0].biography)
+	});
+});
+
 
 
 module.exports = router;

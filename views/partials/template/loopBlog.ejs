@@ -1,6 +1,6 @@
 			<% for (var i=blogData.length-1;i>=0; i--){ %>
 
-			<div class='entry' data-blog-number=<%= i %> >
+			<div class='entry blog' data-blog-number=<%= i %> >
 				<div class='floatLeft category <%= blogData[i].category %>'>
 				<h3 class='category'><a href='/portfolio/<%= blogData[i].category %>'><%= blogData[i].category %></a></h3>
 				</div>
@@ -10,10 +10,10 @@
 
 
 
-					<a href='<%= blogData[i].projectlink %>' target='_blank'><img src='<%= blogData[i].image %>' class='<% if(blogData[i].verticalimage=='TRUE') {%>verticalImage<% } %>'/></a>
+					<a href='<%= blogData[i].postnumber %>'><img src='<%= blogData[i].image %>' class='<% if(blogData[i].verticalimage=='TRUE') {%>verticalImage<% } %>'/></a>
 
 
-				<div class='description'><%- blogData[i].postSplit %></div>
+				<div class='description'><%- blogData[i].postSplit %><p><a href='<%= blogData[i].postnumber %>' style='font-family:Arial, sans-serif; font-weight:bold;'>READ MORE</a></p></div>
 
 
 

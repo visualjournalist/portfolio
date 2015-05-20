@@ -159,20 +159,23 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #header .column p, #header .column ul a li{font-family: arial, sans-serif; line-height: 1.5em;}
 #header .column.follow {padding-left: 0px; display: none;}
 #header .column.follow h3{padding-left: 20px;}
+#header .column.follow h3 a {color:#999; text-decoration: none;}
+#header .column.follow h3 a:hover{color: orange;}
 #header .column.follow ul, #footer #contactInfo ul{list-style-type: none;  padding-left: 0; margin-left: 0;width: 100%;}
 #header .column.follow ul a li, #footer #contactInfo ul a li{width: 100%; border-top: 1px dotted  #FFF; border-top: 1px dotted #666; padding: 10px 0 10px 20px;}
 #header .column.follow ul a:hover li, #footer #contactInfo ul a:hover li{background-color: #999;}
 #header .column.follow ul a:hover {text-decoration: none;}
 #header .column.follow ul a, #footer #contactInfo ul a {text-decoration: none;}
 #header p img{float:left; margin-right:10px;}
-#header .column.bio p{font-family:serif;line-height: 1.5em;color:#;}
+#header .column.bio p{font-family:serif;line-height: 1.5em;}
 
 
 /*footer*/
 #footer #contactInfo {margin:0 auto;}
 #footer #contactInfo h3{padding: 0 5%; font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; color:#CCC}
 
-
+.entry.blog .description p span.tag{font-style:italic; font-family: Arial, sans-serif; font-size:.8em;}
+#container .portfolioGrid .description h2 span {color: orange; text-transform: uppercase;}
 
 @media screen and ( min-width: 600px ) {
 	#containerGrid{padding: 0; display: block;}
@@ -219,7 +222,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#header {padding: 0; }
 	#header, #footer {/*max-width: 894px; padding: 0 5%;*/ font-size: .8em; }
 	#header .column{display:inline-block; vertical-align: top;}
-	#header .column.bio{width: 58%; margin-left:5%; /*float:left;*/ margin-bottom: -99999px; margin-right: 0; padding: 30px 3% 99999px 0; /*padding-bottom: 99999px; padding-right: 3%; padding-left:0;*/}
+	#header .column.bio{width: 58%; margin-left:5%; /*float:left;*/ margin-bottom: -99999px; margin-right: 0; padding: 30px 3% 99999px 0; border-right: 1px solid #666;/*padding-bottom: 99999px; padding-right: 3%; padding-left:0;*/}
 	#header .column.follow{padding-right: 0%; margin-right:0; border-right: none; width:32%;/*float:right;*/border-left: 1px dotted #666; display:inline-block}
 
 	#footer #contactInfo ul {display: inline-block; text-align: center;}

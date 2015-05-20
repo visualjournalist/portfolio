@@ -8,12 +8,6 @@
 
 		<% include partials/template/header.ejs %>
 
-		<div id='navigation'>
-			<a id='prev' title='previousprofile'>&nbsp;</a>
-			<a id='next' title='nextprofile'>&nbsp;</a>
-			<div id='screenLeft'></div>
-			<div id='screenRight'></div>
-		</div>
 
 		<div id='container'>
 
@@ -25,30 +19,29 @@
 			</div>
 
 
+			<div class='inset'>
 
-			<div class='entry' id='projectEntry'>
-				<div class='floatLeft category <%= projectData.category %>'>
-				<h3 class='category'><a href='/portfolio/'>Random project</a></h3>
+			<div class='entry blog' id='projectEntry'>
+				<div class='floatLeft category blog'>
+				<h3 class='category'><a href='/blog/'>Blog post</a></h3>
 				</div>
 				<div class='floatRight'><h3 class='date'><%= projectData.date %> %></h3></div>
 				<div class='clearMe'></div>
 				<h2 class='headline'><%= projectData.title %></h2>
 
 
-				<% if (projectData.videoembed!=""){ %>
-					<iframe width="640" height="360" src="<%= projectData.videoembed %>" frameborder="0" allowfullscreen></iframe>
-					<div class='credit'><%= projectData.employer %></div>
-				<% } else { %>
-					<div class='<%= verticalImage %>'>
-					<a href='<%= projectData.projectlink %>' target='_blank'><img src='/images/<%= projectData.imagebase %>.jpg'/></a>	
-					<div class='credit' style='padding-right:0;'><%= projectData.employer %></div>
-					</div>
-				<% } %>
 
+
+				<div class='<%= verticalImage %>'>
+					<a href='<%= projectData.projectlink %>' target='_blank'><img src='<%= projectData.image %>'/></a>	
+					<div class='credit' style='padding-right:0;'><%= projectData.employer %></div>
+				</div>
 
 				<div class='description'><%- projectData.descriptionSplit %></div>
 
 
+
+				<!--
 				<ul class='listView'>
 				<% if (projectData.projectlink!=""){ %>
 					<a href='<%= projectData.projectlink %>' target='_blank'><li>View the project</li></a>
@@ -60,26 +53,20 @@
 					<a href='<%= projectData.bloglink %>' target='_blank'><li>Read more</li></a>
 				<% } %>
 				</ul>
+				-->
 				<div class='clearMe'></div>
 
 			</div>
 
 
-			<div class='entry' style='margin-bottom: 20px;'>
-				<div class='floatLeft category <%= projectData.category %>'>
-				<h3 class='category'><a href='/portfolio/'>Recent projects</a></h3>
-				</div>
-				<div class='floatRight'><h3 class='date'><a href='/portfolio/'>View full portfolio</a></h3></div>
 			</div>
 
 
+
 			<div id='containerGrid'>
-				<div class='inset'>
-
-				<% include partials/template/loop.ejs %>
-
-				</div>
 			</div><!-- containerGrid -->
+
+
 
 
 		</div><!-- container -->
