@@ -62,6 +62,7 @@ router.get('/', function(req, res, next) {
 		}
 	}
 
+	var url = data[0].url;
 
 
 	res.render('index', { 
@@ -73,6 +74,8 @@ router.get('/', function(req, res, next) {
 		verticalImage: verticalImage,
 		featuredNumber: featuredNumber,
 		category: 'showAll',
+		metaImage: data[0].metaimage,
+		url: url,
 		loopLimit: 6,
 		description: splitParagraphs(data[0].biography)
 	});
@@ -83,12 +86,15 @@ router.get('/', function(req, res, next) {
 router.get('/about', function(req, res, next) {
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
+	var url = data[0].url + '/about/';
+
 
 	res.render('about', { 
 		data: data,
 		pageTitle: 'About',
 		portfolioData: portfolioData,
 		portfolioDescription: '',
+		url: url,
 		description: splitParagraphs(data[0].biography)
 	});
 });
@@ -100,6 +106,7 @@ router.get('/portfolio/', function(req, res, next) {
 
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
+	var url = data[0].url + '/portfolio/';
 
 
 	res.render('portfolio', { 
@@ -109,6 +116,8 @@ router.get('/portfolio/', function(req, res, next) {
 		portfolioDescription: '',
 		featuredNumber: featuredNumber,
 		category: 'showAll',
+		metaImage: data[0].metaimage,
+		url: url,
 		loopLimit: portfolioData.length,
 		description: splitParagraphs(data[0].biography)
 	});
@@ -129,6 +138,7 @@ router.get('/portfolio/:category/', function(req, res, next) {
 
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
+	var url = data[0].url + '/portfolio/' + category;
 
 	res.render('portfolio', { 
 		data: data,
@@ -136,6 +146,8 @@ router.get('/portfolio/:category/', function(req, res, next) {
 		pageTitle: pageTitle,
 		portfolioDescription: splitParagraphs(data[0][category]),
 		category: category,
+		metaImage: data[0].metaimage,
+		url: url,
 		loopLimit: portfolioData.length,
 		description: splitParagraphs(data[0].biography)
 	});
@@ -170,7 +182,8 @@ router.get('/project/:number/', function(req, res, next) {
 			promos.push(portfolioData[k]);
 		}
 	}
-
+	var metaImage = data[0].url + '/images/' + projectData.imagebase + '.jpg';
+	var url = data[0].url + '/project/' + featuredNumber;
 
 	res.render('project', { 
 		data: data,
@@ -181,6 +194,8 @@ router.get('/project/:number/', function(req, res, next) {
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,
 		category: 'showAll',
+		metaImage: metaImage,
+		url: url,
 		loopLimit: 3,
 		description: splitParagraphs(data[0].biography)
 	});
@@ -196,6 +211,7 @@ router.get('/blog/', function(req, res, next) {
 		var splitPost = splitFirstParagraphs(blogData[j].post);
 		blogData[j].postSplit = splitPost;
 	}
+	var url = data[0].url + '/blog/';
 
 
 	res.render('blog', { 
@@ -203,6 +219,8 @@ router.get('/blog/', function(req, res, next) {
 		blogData: blogData,
 		pageTitle: 'Blog',
 		portfolioDescription: '',
+		metaImage: data[0].metaimage,
+		url: url,
 		description: splitParagraphs(data[0].biography)
 	});
 });
@@ -228,6 +246,8 @@ router.get('/blog/:number/', function(req, res, next) {
 	}
 
 	var pageTitle = blogPostData.title;
+	var metaImage = data[0].url + blogPostData.imagebase;
+	var url = data[0].url + '/blog/' + featuredNumber;
 
 
 
@@ -239,6 +259,8 @@ router.get('/blog/:number/', function(req, res, next) {
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,
 		category: 'showAll',
+		metaImage: metaImage,
+		url: url,
 		loopLimit: 3,
 		description: splitParagraphs(data[0].biography)
 	});

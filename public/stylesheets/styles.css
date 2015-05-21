@@ -4,7 +4,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 #menu {background-color: #000; color: #FFF; margin-bottom:0px; padding:0; position: fixed; top:0;width: 100%; border-bottom: 3px #999 solid;z-index: 998;}
 #menu #titleBar{max-width: 1024px; margin: 0 auto;height: 58px;}
-#menu #titleBar h1{font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; font-size: 24px; max-width:1024px; padding:10px 0 10px 5%; float:left;margin: 0;}
+#menu #titleBar h1{font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; font-size: 24px; max-width:1024px; padding:10px 0 10px 5%; float:left;margin: 0; font-weight:normal;}
 #menu #titleBar h1 a{color: #FFF; text-decoration: none;}
 #menu #titleBar h1 a:hover{color: #FFF;}
 
@@ -69,7 +69,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #container h2.headline{padding: 0 5%; width: 90%;}
 .entry {margin-top:35px 0; padding: 35px 0; /*border-bottom: 1px solid #CCC;*/}
 #container .description {margin-top: 10px; width: 100%;margin:0; padding:0; /*padding:0 7%;*/}
-#container .entry h1, #container .entry h2 {font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; line-height: 1.3em;margin-top:15px;text-align: center;}
+#container .entry h1, #container .entry h2 {font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; line-height: 1.3em;margin-top:15px;text-align: center; font-weight:normal;}
 #container .entry h2 {font-size: 1.8em;}
 #container .entry p a{padding:0; color:orange;}
 #container .entry p{padding: 0 5%;}
@@ -93,7 +93,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 .portfolioGrid{width:100%; margin:0; display: block;border-top: 1px solid #CCC;cursor: pointer; cursor: hand; }
 #container .portfolioGrid .description{float:none;width:100%; margin: 0; padding:0;}
 #container .portfolioGrid .description h2{font-family: arial, sans-serif; font-size: 1em; line-height: 1.1em; text-align: left;margin:5px 0 0 0; padding:0; color: #333;}
-.portfolioGrid .description h3{font-family: 'Oswald', arial, sans-serif; font-size: .8em; text-transform: uppercase; color:orange; margin:0;padding:5px 0 0 0;}
+.portfolioGrid .description h3{font-family: 'Oswald', arial, sans-serif; font-size: .8em; text-transform: uppercase; color:orange; margin:0;padding:5px 0 0 0; font-weight:normal;}
 .portfolioGrid:hover h2{text-decoration: underline;}
 #container .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
 
@@ -143,13 +143,13 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #sharingLinks a#twitter{background: url(../images/share_twitter_small.png)}
 
 #resume {width: 86%; max-width: 1024px; margin: 0 auto; padding: 0 7%; background-color: #CCC; color:#000;overflow: hidden;}
-#resume h3{font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; line-height: 1.3em;}
+#resume h3{font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; line-height: 1.3em; font-weight:normal;}
 
 /*header*/
 #header {width: 100%; max-width: 1024px; margin:50px auto 0 auto; padding: 30px 0 0 0; background-color: #333; color:#FFF;overflow: hidden;}
 #footer {width: 100%; max-width: 1024px; margin:0 auto; padding: 0; background-color: #333; color:#FFF;overflow: hidden; border-top:1px solid #666;}
 #header .column {padding: 0 5%;}
-#header .column h3{font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; line-height: 1.3em; color:#CCC;}
+#header .column h3{font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; line-height: 1.3em; color:#CCC; font-weight:normal;}
 #header .column ul a li, #footer #contactInfo ul a li {background-color: transparent; color: #FFF;}
 #header .column p {margin-bottom: 2em;}
 #header .column p, #header .column ul a li{font-family: arial, sans-serif; line-height: 1.5em;}
@@ -169,7 +169,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 /*footer*/
 #footer #contactInfo {margin:0 auto;}
-#footer #contactInfo h3{padding: 0 5%; font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; color:#CCC}
+#footer #contactInfo h3{padding: 0 5%; font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; color:#CCC; font-weight:normal;}
 
 .entry.blog .description p span.tag{font-style:italic; font-family: Arial, sans-serif; font-size:.8em;}
 #container .portfolioGrid .description h2 span {color: orange; text-transform: uppercase;}

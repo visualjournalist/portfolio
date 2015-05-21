@@ -5,14 +5,13 @@
 	<!-- for Google -->
 	<meta name='description' content="<%- data[0].metadescription %>"/>
 	<meta name="keywords" content="<%= data[0].metakeywords %>" />
-
 	<meta name="author" content="<%- data[0].name %>" />
 
 	<!-- for Facebook -->
 	<meta property="og:title" content="<%- data[0].title %>  :: <%= pageTitle %>" />
 	<meta property="og:type" content="<%- data[0].metatype %>" />
-	<meta property="og:image" content="<%- data[0].metaimage %>" />
-	<meta property="og:url" content="<%- data[0].metaurl %>" />
+	<meta property="og:image" content="<%= metaImage %>" />
+	<meta property="og:url" content="<%- url %>" />
 	<meta property="og:description" content="<%- data[0].metadescription %>" />
 
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
