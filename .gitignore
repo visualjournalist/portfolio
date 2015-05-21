@@ -34,3 +34,6 @@ config.js
 
 # Ignore the JPGs from the portfolio
 public/images/*.jpg
+
+# Ignore Webstorm folder
+/.idea/

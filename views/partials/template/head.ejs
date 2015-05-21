@@ -1,4 +1,4 @@
-	<title><%- data[0].title %></title>
+	<title><%- data[0].title %> <%if (pageTitle!=''){%> :: <%= pageTitle %> <% } %></title>
 	<meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'/>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
@@ -9,7 +9,7 @@
 	<meta name="author" content="<%- data[0].name %>" />
 
 	<!-- for Facebook -->
-	<meta property="og:title" content="<%- data[0].title %>" />
+	<meta property="og:title" content="<%- data[0].title %>  :: <%= pageTitle %>" />
 	<meta property="og:type" content="<%- data[0].metatype %>" />
 	<meta property="og:image" content="<%- data[0].metaimage %>" />
 	<meta property="og:url" content="<%- data[0].metaurl %>" />

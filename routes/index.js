@@ -27,6 +27,9 @@ function splitFirstParagraphs(source){
 	return splitGraphs
 }
 
+function capitalizeFirstLetter(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
 /* GET home page. */
@@ -63,6 +66,7 @@ router.get('/', function(req, res, next) {
 
 	res.render('index', { 
 		data: data,
+		pageTitle: "Brian Williamson's portfolio",
 		portfolioData: promos,
 		portfolioDescription: '',
 		projectData: projectData,
@@ -82,6 +86,7 @@ router.get('/about', function(req, res, next) {
 
 	res.render('about', { 
 		data: data,
+		pageTitle: 'About',
 		portfolioData: portfolioData,
 		portfolioDescription: '',
 		description: splitParagraphs(data[0].biography)
@@ -99,6 +104,7 @@ router.get('/portfolio/', function(req, res, next) {
 
 	res.render('portfolio', { 
 		data: data,
+		pageTitle: "Brian Williamson's portfolio",
 		portfolioData: portfolioData,
 		portfolioDescription: '',
 		featuredNumber: featuredNumber,
@@ -113,9 +119,13 @@ router.get('/portfolio/', function(req, res, next) {
 /* GET portfolio page. */
 router.get('/portfolio/:category/', function(req, res, next) {
 	var category = req.params.category;
+
 	if (req.params.category==null){
 		category = illustration;
 	}
+
+	var pageTitle = "Brian Williamson's " + capitalizeFirstLetter(category) + " portfolio";
+
 
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
@@ -123,6 +133,7 @@ router.get('/portfolio/:category/', function(req, res, next) {
 	res.render('portfolio', { 
 		data: data,
 		portfolioData: portfolioData,
+		pageTitle: pageTitle,
 		portfolioDescription: splitParagraphs(data[0][category]),
 		category: category,
 		loopLimit: portfolioData.length,
@@ -151,6 +162,7 @@ router.get('/project/:number/', function(req, res, next) {
 		verticalImage = 'verticalImage';
 	}
 
+	var pageTitle = projectData.title;
 
 	var promos = [];
 	for (k=0; k<portfolioData.length; k++){
@@ -164,6 +176,7 @@ router.get('/project/:number/', function(req, res, next) {
 		data: data,
 		portfolioData: promos,
 		projectData: projectData,
+		pageTitle: pageTitle,
 		portfolioDescription: '',
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,
@@ -188,6 +201,7 @@ router.get('/blog/', function(req, res, next) {
 	res.render('blog', { 
 		data: data,
 		blogData: blogData,
+		pageTitle: 'Blog',
 		portfolioDescription: '',
 		description: splitParagraphs(data[0].biography)
 	});
@@ -213,19 +227,14 @@ router.get('/blog/:number/', function(req, res, next) {
 		verticalImage = 'verticalImage';
 	}
 
-	/*
-	var promos = [];
-	for (k=0; k<blogData.length; k++){
-		if(blogData[k].category==currentCategory&&blogData[k].projectnumber!=featuredNumber){
-			promos.push(blogData[k]);
-		}
-	}
-	*/
+	var pageTitle = blogPostData.title;
+
 
 
 	res.render('blogpost', { 
 		data: data,
 		projectData: blogPostData,
+		pageTitle: pageTitle,
 		portfolioDescription: '',
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,

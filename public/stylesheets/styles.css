@@ -1,9 +1,4 @@
-body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-serif; font-size: 1em;
-	background-image: url(../images/fbi_spinner.gif);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-}
+body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-serif; font-size: 1em;}
 
 
 
@@ -84,7 +79,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #container .entry h3.category a{padding:0; text-decoration: none; color:#FFF;}
 #container .entry a img, #container .entry iframe{margin: 20px 0 0px 0; padding:0;}
 #container .entry .credit{text-align: right; color:#999; font-size: .7em;padding-right: 7%;}
-
+#container .entry.blog h2 a {color: #333; text-decoration: none;}
+#container .entry.blog h2 a:hover {color: #333; text-decoration: underline;}
 
 
 #container .entry ul.listView {text-decoration: none; list-style-type: none; padding:0; margin:20px 0 0 0; width: 100%;}
@@ -162,7 +158,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #header .column.follow h3 a {color:#999; text-decoration: none;}
 #header .column.follow h3 a:hover{color: orange;}
 #header .column.follow ul, #footer #contactInfo ul{list-style-type: none;  padding-left: 0; margin-left: 0;width: 100%;}
-#header .column.follow ul a li, #footer #contactInfo ul a li{width: 100%; border-top: 1px dotted  #FFF; border-top: 1px dotted #666; padding: 10px 0 10px 20px;}
+#header .column.follow ul a li, #footer #contactInfo ul a li{width: 100%; border-top: 1px dotted #666; padding: 10px 0 10px 20px;}
+#header .column.follow ul a:last-of-type li {border-bottom: 1px dotted  #666;}
 #header .column.follow ul a:hover li, #footer #contactInfo ul a:hover li{background-color: #999;}
 #header .column.follow ul a:hover {text-decoration: none;}
 #header .column.follow ul a, #footer #contactInfo ul a {text-decoration: none;}
@@ -203,7 +200,6 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 	body{font-size:1.3em;}
 	/*#container img{width: 45%; float:right; padding: 0 20px;}*/
-	#container .entry:first-of-type h2{font-size:2.2em;}
 
 	#menu #titleBar h1 a span.extended{display: inline-block;}
 	#menu #titleBar h1 a span.condensed{display: none;}
@@ -211,7 +207,9 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 
 	#container .entry h1, #container .entry h2{text-align: left;}
-	#container .entry h2{font-size: 2.5em;}
+	#container .entry:first-of-type h2{font-size:2.5em;}
+	#container .entry h2{font-size: 2.2em;}
+
 
 	#container .entry ul.listView {list-style-type: none; padding:0; margin:20px 0 0 0; width: 100%;}
 	#container .entry ul.listView li{border-top: none;  padding:8px 0 8px 5%; margin:0; font-family: arial, sans-serif; font-weight: bold;text-decoration: underline; color:orange; }
@@ -225,17 +223,20 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#header .column.bio{width: 58%; margin-left:5%; /*float:left;*/ margin-bottom: -99999px; margin-right: 0; padding: 30px 3% 99999px 0; border-right: 1px solid #666;/*padding-bottom: 99999px; padding-right: 3%; padding-left:0;*/}
 	#header .column.follow{padding-right: 0%; margin-right:0; border-right: none; width:32%;/*float:right;*/border-left: 1px dotted #666; display:inline-block}
 
-	#footer #contactInfo ul {display: inline-block; text-align: center;}
+	#footer #contactInfo ul {display: inline-block; text-align: center; color: #FFF;}
 	#footer #contactInfo ul a li {display: inline-block; margin: 0; padding:0; width:auto; border-top:none;}
-	#footer #contactInfo ul li:after {content: " | "}
-	#footer #contactInfo ul a:last-of-type li:after{content:" ";}
+	#footer #contactInfo ul a:after {content: " | "}
+	#footer #contactInfo ul a:last-of-type:after{content:" ";}
+	#footer #contactInfo ul a:last-of-type li:after{content:" "; color: #FFF;}
+	#footer #contactInfo ul a{ color: #FFF;}
 	#footer #contactInfo h3{display: none;}
 	#footer #contactInfo ul a:hover li{background-color: transparent; color:orange; text-decoration: underline;}
 
 }
 @media screen and ( min-width: 900px ) {
 	.portfolioGrid{width:31%; margin: 0 0 25px 1.5%;}
-	#container .entry h2{font-size: 3em;}
+	#container .entry:first-of-type h2{font-size:3em;}
+	#container .entry h2{font-size: 2.5em;}
 }
 
 
@@ -254,6 +255,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#sharingLinks a{display: block;float:none; }
 
 }
+
+
 @media print {
 	body{font-size: .8em;}
     #menu {display: none;}
