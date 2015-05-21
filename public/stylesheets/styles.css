@@ -173,6 +173,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 .entry.blog .description p span.tag{font-style:italic; font-family: Arial, sans-serif; font-size:.8em;}
 #container .portfolioGrid .description h2 span {color: orange; text-transform: uppercase;}
+.entry.blog .description p strong{font-family: Arial, sans-serif; text-transform: uppercase;}
 
 @media screen and ( min-width: 600px ) {
 	#containerGrid{padding: 0; display: block;}
