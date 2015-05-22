@@ -1,5 +1,5 @@
 		<% for (var i=blogData.length-1;i>=0; i--){ %>
-			<% if (blogData[i].hide != 'TRUE'){ %>
+			<% if (blogData[i].public == 'TRUE'){ %>
 			<div class='entry blog' data-blog-number=<%= i %> >
 				<div class='floatLeft category <%= blogData[i].category %>'>
 				<h3 class='category'><a href='/portfolio/<%= blogData[i].category %>'><%= blogData[i].category %></a></h3>

@@ -156,6 +156,7 @@ router.get('/portfolio/:category/', function(req, res, next) {
 
 /* GET project page. */
 router.get('/project/:number/', function(req, res, next) {
+//router.get('/project/:number/:title', function(req, res, next) {
 	var featuredNumber = req.params.number;
 
 	var data = global.site.sitewide;
@@ -213,11 +214,16 @@ router.get('/blog/', function(req, res, next) {
 	}
 	var url = data[0].url + '/blog/';
 
+	var portfolioData = global.portfolio.sitewide;
+
 
 	res.render('blog', { 
 		data: data,
 		blogData: blogData,
+		portfolioData: portfolioData,
+		category: 'showAll',
 		pageTitle: 'Blog',
+		loopLimit: 18,
 		portfolioDescription: '',
 		metaImage: data[0].metaimage,
 		url: url,

@@ -90,12 +90,20 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #container .entry ul.listView a:last-of-type li{border-bottom: 1px solid #CCC;}
 
 
-.portfolioGrid{width:100%; margin:0; display: block;border-top: 1px solid #CCC;cursor: pointer; cursor: hand; }
+.portfolioGrid{width:100%; margin:0; display: block; cursor: pointer; cursor: hand; }
 #container .portfolioGrid .description{float:none;width:100%; margin: 0; padding:0;}
 #container .portfolioGrid .description h2{font-family: arial, sans-serif; font-size: 1em; line-height: 1.1em; text-align: left;margin:5px 0 0 0; padding:0; color: #333;}
 .portfolioGrid .description h3{font-family: 'Oswald', arial, sans-serif; font-size: .8em; text-transform: uppercase; color:orange; margin:0;padding:5px 0 0 0; font-weight:normal;}
 .portfolioGrid:hover h2{text-decoration: underline;}
 #container .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
+
+.sidebar{width: 100%; background-color: #FFF;}
+.sidebar .portfolioGrid{width:90%; margin:0 5% 25px 5%; display: block; cursor: pointer; cursor: hand; }
+#container .sidebar .portfolioGrid .description{float:none;width:100%; margin: 0; padding:0;}
+#container .sidebar .portfolioGrid .description h2{font-family: arial, sans-serif; font-size: 1em; line-height: 1.1em; text-align: left;margin:5px 0 0 0; padding:0; color: #333;}
+.sidebar .portfolioGrid .description h3{font-family: 'Oswald', arial, sans-serif; font-size: .8em; text-transform: uppercase; color:orange; margin:0;padding:5px 0 0 0; font-weight:normal;}
+.sidebar .portfolioGrid:hover h2{text-decoration: underline;}
+#container .sidebar .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
 
 
 #container .portfolioGrid .square {
@@ -199,7 +207,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.portfolioGrid .description h2{font-size: .8em; margin-top: 5px !important; color: #333;}
 
 	#menu #dropdown {display: none;}
-
+	.sidebar{width: 33.9%; float:right; background-color: #FFF;}
+	.inset .blogRoll {width: 66%; float:left; background-color: #FFF;}
 
 
 	body{font-size:1.3em;}
@@ -238,6 +247,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 }
 @media screen and ( min-width: 900px ) {
+	#container .entry.blog p{padding: 0 15%;}
+	#container .blogRoll .entry.blog p{padding: 0 5%;}
 	.portfolioGrid{width:31%; margin: 0 0 25px 1.5%;}
 	#container .entry:first-of-type h2{font-size:3em;}
 	#container .entry h2{font-size: 2.5em;}
