@@ -17,6 +17,7 @@ function resizeIframes(){
 	$("iframe").height(columnWidth/aspectRatio);
 }
 
+
 $(document).ready( function() {
 	//Dropdown navigation
 	$( "#menu img" ).click(function() {
