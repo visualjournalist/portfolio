@@ -207,8 +207,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.portfolioGrid .description h2{font-size: .8em; margin-top: 5px !important; color: #333;}
 
 	#menu #dropdown {display: none;}
-	.sidebar{width: 33.9%; float:right; background-color: #FFF;}
-	.inset .blogRoll {width: 66%; float:left; background-color: #FFF; border-right: 1px dotted #999;}
+	.sidebar{width: 33.5%; float:right; background-color: #FFF; font-size: .8em;}
+	.inset .blogRoll {width: 66%; float:left; background-color: #FFF; border-right: 1px dotted #CCC;}
 
 
 	body{font-size:1.3em;}
@@ -252,6 +252,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.portfolioGrid{width:31%; margin: 0 0 25px 1.5%;}
 	#container .entry:first-of-type h2{font-size:3em;}
 	#container .entry h2{font-size: 2.5em;}
+	#container .entry.blog:first-of-type h2{font-size:3em;}
+	#container .entry.blog h2{font-size: 2em;}
 }
 
 
