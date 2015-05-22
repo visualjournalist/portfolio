@@ -208,7 +208,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 	#menu #dropdown {display: none;}
 	.sidebar{width: 33.9%; float:right; background-color: #FFF;}
-	.inset .blogRoll {width: 66%; float:left; background-color: #FFF;}
+	.inset .blogRoll {width: 66%; float:left; background-color: #FFF; border-right: 1px dotted #999;}
 
 
 	body{font-size:1.3em;}
