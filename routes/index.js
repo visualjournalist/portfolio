@@ -15,6 +15,13 @@ function splitParagraphs(source){
 	return splitGraphs
 }
 
+function createIntro(source, image){
+	var photo = '<img src="' + image + '" style="float: left;">';
+	var paragraph = '<p>' + photo + source + '</p>';
+	return paragraph;
+}
+
+/*Used for blog*/
 function splitFirstParagraphs(source){
 	var splitGraphs = '';
 
@@ -64,6 +71,7 @@ router.get('/', function(req, res, next) {
 
 	var url = data[0].url;
 
+	//description: splitParagraphs(data[0].biography)
 
 	res.render('index', { 
 		data: data,
@@ -77,7 +85,7 @@ router.get('/', function(req, res, next) {
 		metaImage: data[0].metaimage,
 		url: url,
 		loopLimit: 6,
-		description: splitParagraphs(data[0].biography)
+		description: createIntro(data[0].biography, data[0].mugshot)
 	});
 });
 
@@ -95,7 +103,7 @@ router.get('/about', function(req, res, next) {
 		portfolioData: portfolioData,
 		portfolioDescription: '',
 		url: url,
-		description: splitParagraphs(data[0].biography)
+		description: createIntro(data[0].biography, data[0].mugshot)
 	});
 });
 
@@ -119,7 +127,7 @@ router.get('/portfolio/', function(req, res, next) {
 		metaImage: data[0].metaimage,
 		url: url,
 		loopLimit: portfolioData.length,
-		description: splitParagraphs(data[0].biography)
+		description: createIntro(data[0].biography, data[0].mugshot)
 	});
 });
 
@@ -140,11 +148,13 @@ router.get('/portfolio/:category/', function(req, res, next) {
 	var portfolioData = global.portfolio.sitewide;
 	var url = data[0].url + '/portfolio/' + category;
 
+	//portfolioDescription: splitParagraphs(data[0][category]),
+
 	res.render('portfolio', { 
 		data: data,
 		portfolioData: portfolioData,
 		pageTitle: pageTitle,
-		portfolioDescription: splitParagraphs(data[0][category]),
+		portfolioDescription: createIntro(data[0][category], data[0].mugshot),
 		category: category,
 		metaImage: data[0].metaimage,
 		url: url,
@@ -186,7 +196,8 @@ router.get('/project/:number/', function(req, res, next) {
 	var metaImage = data[0].url + '/images/' + projectData.imagebase + '.jpg';
 	var url = data[0].url + '/project/' + featuredNumber;
 
-	res.render('project', { 
+	/*description: splitParagraphs(data[0].biography)*/
+	 res.render('project', {
 		data: data,
 		portfolioData: promos,
 		projectData: projectData,
@@ -198,7 +209,7 @@ router.get('/project/:number/', function(req, res, next) {
 		metaImage: metaImage,
 		url: url,
 		loopLimit: 3,
-		description: splitParagraphs(data[0].biography)
+		description: createIntro(data[0][currentCategory], data[0].mugshot)
 	});
 });
 
@@ -227,7 +238,7 @@ router.get('/blog/', function(req, res, next) {
 		portfolioDescription: '',
 		metaImage: data[0].metaimage,
 		url: url,
-		description: splitParagraphs(data[0].biography)
+		description: createIntro(data[0].blog, data[0].mugshot)
 	});
 });
 

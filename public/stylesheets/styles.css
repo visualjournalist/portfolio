@@ -62,14 +62,16 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #container .floatLeft{float:left; padding: 5px; padding-left:5%;}
 #container .floatRight{float:right; padding-right:5%;}
 #container .floatLeft.category{background-color: orange;}
-#container .floatLeft.category.animation, #container .floatLeft.category.video{background-color: #70ccef;}
+/*#container .floatLeft.category.animation, #container .floatLeft.category.video{background-color: #70ccef;}*/
+#container .floatLeft.category.blog{background-color: #70ccef;}
+
 
 #container h3{font-weight: normal;}
 #container h3, #container h2{width: 100%;margin:0;padding:0}
 #container h2.headline{padding: 0 5%; width: 90%;}
 .entry {margin-top:35px 0; padding: 35px 0; /*border-bottom: 1px solid #CCC;*/}
 #container .description {margin-top: 10px; width: 100%;margin:0; padding:0; /*padding:0 7%;*/}
-#container .entry h1, #container .entry h2 {font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; line-height: 1.3em;margin-top:15px;text-align: center; font-weight:normal;}
+#container .entry h1, #container .entry h2 {font-family: 'Oswald', 'Roboto Slab', arial, sans-serif; line-height: 1.3em;margin-top:15px;text-align: left; font-weight:normal;}
 #container .entry h2 {font-size: 1.8em;}
 #container .entry p a{padding:0; color:orange;}
 #container .entry p{padding: 0 5%;}
@@ -248,6 +250,9 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 }
 @media screen and ( min-width: 900px ) {
 	#container .entry.blog p{padding: 0 15%;}
+	.entry.blog .description ul {padding: 0 15% 0 20%;}
+	.entry.blog .description table {padding: 0 15%;}
+
 	#container .blogRoll .entry.blog p{padding: 0 5%;}
 	.portfolioGrid{width:31%; margin: 0 0 25px 1.5%;}
 	#container .entry:first-of-type h2{font-size:3em;}
