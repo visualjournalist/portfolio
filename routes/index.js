@@ -34,6 +34,13 @@ function splitFirstParagraphs(source){
 	return splitGraphs
 }
 
+/*Used for metaDescription on projects*/
+function firstParagraph(source){
+	var paragraphs = source;
+	paragraphs = paragraphs.split('\n')
+	return paragraphs[0]
+}
+
 function capitalizeFirstLetter(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -172,14 +179,18 @@ router.get('/project/:number/', function(req, res, next) {
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
 	var projectData;
-	var currentCategory;
+
+	var projectMetaDescription;
+	var projectMetaImage;
 	for (var k=0; k<portfolioData.length; k++){
 		if(portfolioData[k].projectnumber==featuredNumber){
 			projectData = portfolioData[k];
-			projectData.descriptionSplit = splitParagraphs(projectData.description);
-			currentCategory = projectData.category;
 		}
 	}
+	projectData.descriptionSplit = splitParagraphs(projectData.description);
+
+	var currentCategory = projectData.category;
+
 	var verticalImage = '';
 	if (projectData.verticalimage == 'TRUE'){
 		verticalImage = 'verticalImage';
@@ -195,7 +206,7 @@ router.get('/project/:number/', function(req, res, next) {
 	}
 	var metaImage = data[0].url + '/images/' + projectData.imagebase + '.jpg';
 	var url = data[0].url + '/project/' + featuredNumber;
-
+	var metaDescription = firstParagraph(projectData.description)
 	/*description: splitParagraphs(data[0].biography)*/
 	 res.render('project', {
 		data: data,
@@ -207,6 +218,7 @@ router.get('/project/:number/', function(req, res, next) {
 		verticalImage: verticalImage,
 		category: 'showAll',
 		metaImage: metaImage,
+		metaDescription: metaDescription,
 		url: url,
 		loopLimit: 3,
 		description: createIntro(data[0][currentCategory], data[0].mugshot)
@@ -279,7 +291,7 @@ router.get('/blog/:number/', function(req, res, next) {
 		metaImage: metaImage,
 		url: url,
 		loopLimit: 3,
-		description: splitParagraphs(data[0].biography)
+		description: createIntro(data[0].blog, data[0].mugshot)
 	});
 });
 

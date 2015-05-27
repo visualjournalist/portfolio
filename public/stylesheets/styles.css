@@ -181,12 +181,12 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #footer #contactInfo {margin:0 auto;}
 #footer #contactInfo h3{padding: 0 5%; font-family: 'Oswald', arial, sans-serif; font-size: 1.3em; color:#CCC; font-weight:normal;}
 
-.entry.blog .description p span.tag{font-style:italic; font-family: Arial, sans-serif; font-size:.8em;}
+.entry .description p span.tag{font-style:italic; font-family: Arial, sans-serif; font-size:.8em;}
 #container .portfolioGrid .description h2 span {color: orange; text-transform: uppercase;}
-.entry.blog .description p strong{font-family: Arial, sans-serif; text-transform: uppercase;}
-.entry.blog .description ul {padding: 0 5% 0 10%;}
-.entry.blog .description table {padding: 0 5%;}
-.entry.blog .description ul li {font-family: serif;}
+.entry .description p strong{font-family: Arial, sans-serif; text-transform: uppercase;}
+.entry .description ul {padding: 0 5% 0 10%;}
+.entry .description table {padding: 0 5%;}
+.entry .description ul li {font-family: serif;}
 
 @media screen and ( min-width: 600px ) {
 	#containerGrid{padding: 0; display: block;}
@@ -249,9 +249,9 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 
 }
 @media screen and ( min-width: 900px ) {
-	#container .entry.blog p{padding: 0 15%;}
-	.entry.blog .description ul {padding: 0 15% 0 20%;}
-	.entry.blog .description table {padding: 0 15%;}
+	#container .entry p{padding: 0 15%;}
+	.entry .description ul {padding: 0 15% 0 20%;}
+	.entry .description table {padding: 0 15%;}
 
 	#container .blogRoll .entry.blog p{padding: 0 5%;}
 	.portfolioGrid{width:31%; margin: 0 0 25px 1.5%;}
@@ -259,6 +259,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#container .entry h2{font-size: 2.5em;}
 	#container .entry.blog:first-of-type h2{font-size:3em;}
 	#container .entry.blog h2{font-size: 2em;}
+
+	#container .entry ul.listView li{padding:8px 0 8px 15%;}
 }
 
 
