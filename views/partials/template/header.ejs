@@ -3,11 +3,9 @@
 
 <div id='header'>
 	<div class='column bio'>
-		<% if (portfolioDescription!='') { %>
-			<%- portfolioDescription %></p>
-			<% } else{ %>
-			<%- description %>
-			<% } %>
+		<p><img src="<%- data[0].mugshot %> " style="float: left;">
+				<%- description %>
+		</p>
 	</div><div class='column follow'>
 		<h3><a href='/portfolio/' style=''>PORTFOLIO</a></h3>
 		<ul>

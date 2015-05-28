@@ -52,7 +52,7 @@
 
 				<ul class='listView'>
 					<% if (projectData.projectlink!=""){ %>
-						<a href='<%= projectData.projectlink %>'><li>View the project</li></a>
+						<a href='<%= projectData.projectlink %>'><li>View the project <% if (projectData.medium=='Flash'){ %> (Requires Flash) <% } %></li></a>
 					<% } %>
 					<% if (projectData.videolink!=""){ %>
 						<a href='<%= projectData.videolink %>'><li>Watch a video</li></a>

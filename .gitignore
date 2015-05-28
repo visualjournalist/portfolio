@@ -35,5 +35,9 @@ config.js
 # Ignore the JPGs from the portfolio
 public/images/*.jpg
 
+# Ignore the SWFs from the portfolio
+public/flash/*.swf
+
+
 # Ignore Webstorm folder
 /.idea/

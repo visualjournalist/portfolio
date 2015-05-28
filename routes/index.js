@@ -92,8 +92,9 @@ router.get('/', function(req, res, next) {
 		metaImage: data[0].metaimage,
 		url: url,
 		loopLimit: 6,
-		description: createIntro(data[0].biography, data[0].mugshot)
+		description: data[0].biography
 	});
+	//description: createIntro(data[0].biography, data[0].mugshot)
 });
 
 
@@ -110,7 +111,7 @@ router.get('/about', function(req, res, next) {
 		portfolioData: portfolioData,
 		portfolioDescription: '',
 		url: url,
-		description: createIntro(data[0].biography, data[0].mugshot)
+		description: data[0].biography
 	});
 });
 
@@ -134,7 +135,7 @@ router.get('/portfolio/', function(req, res, next) {
 		metaImage: data[0].metaimage,
 		url: url,
 		loopLimit: portfolioData.length,
-		description: createIntro(data[0].biography, data[0].mugshot)
+		description: data[0].biography
 	});
 });
 
@@ -161,13 +162,16 @@ router.get('/portfolio/:category/', function(req, res, next) {
 		data: data,
 		portfolioData: portfolioData,
 		pageTitle: pageTitle,
-		portfolioDescription: createIntro(data[0][category], data[0].mugshot),
+		portfolioDescription: data[0][category],
 		category: category,
 		metaImage: data[0].metaimage,
 		url: url,
 		loopLimit: portfolioData.length,
-		description: splitParagraphs(data[0].biography)
+		description: data[0][category]
 	});
+
+	//		description: splitParagraphs(data[0].biography)
+
 });
 
 
@@ -180,8 +184,6 @@ router.get('/project/:number/', function(req, res, next) {
 	var portfolioData = global.portfolio.sitewide;
 	var projectData;
 
-	var projectMetaDescription;
-	var projectMetaImage;
 	for (var k=0; k<portfolioData.length; k++){
 		if(portfolioData[k].projectnumber==featuredNumber){
 			projectData = portfolioData[k];
@@ -207,13 +209,14 @@ router.get('/project/:number/', function(req, res, next) {
 	var metaImage = data[0].url + '/images/' + projectData.imagebase + '.jpg';
 	var url = data[0].url + '/project/' + featuredNumber;
 	var metaDescription = firstParagraph(projectData.description)
+
 	/*description: splitParagraphs(data[0].biography)*/
 	 res.render('project', {
 		data: data,
 		portfolioData: promos,
 		projectData: projectData,
 		pageTitle: pageTitle,
-		portfolioDescription: '',
+		portfolioDescription: data[0][currentCategory],
 		featuredNumber: featuredNumber,
 		verticalImage: verticalImage,
 		category: 'showAll',
@@ -221,7 +224,7 @@ router.get('/project/:number/', function(req, res, next) {
 		metaDescription: metaDescription,
 		url: url,
 		loopLimit: 3,
-		description: createIntro(data[0][currentCategory], data[0].mugshot)
+		description: data[0][currentCategory]
 	});
 });
 
@@ -250,7 +253,7 @@ router.get('/blog/', function(req, res, next) {
 		portfolioDescription: '',
 		metaImage: data[0].metaimage,
 		url: url,
-		description: createIntro(data[0].blog, data[0].mugshot)
+		description: data[0].blog
 	});
 });
 
@@ -291,8 +294,63 @@ router.get('/blog/:number/', function(req, res, next) {
 		metaImage: metaImage,
 		url: url,
 		loopLimit: 3,
-		description: createIntro(data[0].blog, data[0].mugshot)
+		description: data[0].blog
 	});
+});
+
+
+/* GET home page. */
+router.get('/flashProject/:filename', function(req, res, next) {
+	var filename = req.params.filename;
+	var featuredNumber = 0;
+	if (req.query.number!=null){
+		featuredNumber = req.query.number;
+	};
+
+
+	var data = global.site.sitewide;
+	var portfolioData = global.portfolio.sitewide;
+
+
+	var randomProjectNumber = Math.floor(portfolioData.length*Math.random());
+	var projectData = portfolioData[randomProjectNumber];
+	projectData.descriptionSplit = splitParagraphs(projectData.description);
+	var currentCategory = projectData.category;
+
+	var verticalImage = '';
+	if (projectData.verticalimage == 'TRUE'){
+		verticalImage = 'verticalImage';
+	}
+
+
+	var promos = [];
+	for (k=0; k<portfolioData.length; k++){
+		if(portfolioData[k].projectnumber!=portfolioData[randomProjectNumber].projectnumber){
+			promos.push(portfolioData[k]);
+		}
+	}
+
+	var url = data[0].url;
+
+	//description: splitParagraphs(data[0].biography)
+
+	res.render('flash', {
+		filename: filename,
+		data: data,
+		pageTitle: "Brian Williamson's portfolio",
+		portfolioData: promos,
+		portfolioDescription: '',
+		projectData: projectData,
+		verticalImage: verticalImage,
+		featuredNumber: featuredNumber,
+		category: 'showAll',
+		metaImage: data[0].metaimage,
+		url: url,
+		loopLimit: 6,
+		description: data[0].biography
+	});
+
+	//description: createIntro(data[0].biography, data[0].mugshot)
 });
 
 
