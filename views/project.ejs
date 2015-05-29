@@ -40,7 +40,7 @@
 					<div class='credit'><%= projectData.employer %></div>
 				<% } else { %>
 					<div class='<%= verticalImage %>'>
-					<a href='<%= projectData.projectlink %>' target='_blank' ><img src='/images/<%= projectData.imagebase %>.jpg' <% if (projectData.alttag!=""){ %> alt = '<%= projectData.alttag %>'<% } %>/></a>
+					<a href='<%= projectData.projectlink %>'><img src='/images/<%= projectData.imagebase %>.jpg' <% if (projectData.alttag!=""){ %> alt = '<%= projectData.alttag %>'<% } %>/></a>
 					<div class='credit' style='padding-right:0;'><%= projectData.employer %></div>
 					</div>
 				<% } %>
@@ -91,6 +91,10 @@
 		<% include partials/template/scripts.ejs %>
 		<script type="text/javascript">
 			document.location.hash = 'container';
+
+			$('#prev').prop('href', '<%= previousProject %>');
+			$('#next').prop('href', '<%= nextProject %>');
+
 		</script>
 	</body>
 </html>

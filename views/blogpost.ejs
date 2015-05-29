@@ -41,19 +41,17 @@
 
 
 
-				<!--
 				<ul class='listView'>
-				<% if (projectData.projectlink!=""){ %>
-					<a href='<%= projectData.projectlink %>' target='_blank'><li>View the project</li></a>
-				<% } %>
-				<% if (projectData.videolink!=""){ %>
-					<a href='<%= projectData.videolink %>' target='_blank'><li>Watch a video</li></a>
-				<% } %>
-				<% if (projectData.bloglink!=""){ %>
-					<a href='<%= projectData.bloglink %>' target='_blank'><li>Read more</li></a>
-				<% } %>
+					<% if (projectData.projectlink!=""){ %>
+					<a href='<%= projectData.projectlink %>'><li>View the project <% if (projectData.medium=='Flash'){ %> (Requires Flash) <% } %></li></a>
+					<% } %>
+					<% if (projectData.videolink!=""){ %>
+					<a href='<%= projectData.videolink %>'><li>Watch a video</li></a>
+					<% } %>
+					<% if (projectData.githublink!=""){ %>
+					<a href='<%= projectData.githublink %>'><li>Check out the code</li></a>
+					<% } %>
 				</ul>
-				-->
 				<div class='clearMe'></div>
 
 			</div>

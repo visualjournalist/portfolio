@@ -183,12 +183,29 @@ router.get('/project/:number/', function(req, res, next) {
 	var data = global.site.sitewide;
 	var portfolioData = global.portfolio.sitewide;
 	var projectData;
+	var previousProjectNumber;
+	var nextProjectNumber;
 
 	for (var k=0; k<portfolioData.length; k++){
 		if(portfolioData[k].projectnumber==featuredNumber){
 			projectData = portfolioData[k];
+
+
+			//Define the previous project number;
+			if(k == 0){
+				previousProjectNumber = portfolioData[portfolioData.length - 1].projectnumber;
+			} else {
+				previousProjectNumber = portfolioData[k - 1].projectnumber;
+			}
+			//Define the next project number
+			if(k == portfolioData.length - 1){
+				nextProjectNumber = portfolioData[0].projectnumber;
+			}else{
+				nextProjectNumber = portfolioData[k + 1].projectnumber;
+			}
 		}
 	}
+
 	projectData.descriptionSplit = splitParagraphs(projectData.description);
 
 	var currentCategory = projectData.category;
@@ -224,12 +241,14 @@ router.get('/project/:number/', function(req, res, next) {
 		metaDescription: metaDescription,
 		url: url,
 		loopLimit: 3,
+		nextProject: nextProjectNumber,
+		previousProject: previousProjectNumber,
 		description: data[0][currentCategory]
 	});
 });
 
 
-/* GET blog page. */
+/* GET blog list. */
 router.get('/blog/', function(req, res, next) {
 	var data = global.site.sitewide;
 	var blogData = global.blog.sitewide;
@@ -257,7 +276,7 @@ router.get('/blog/', function(req, res, next) {
 	});
 });
 
-/* GET project page. */
+/* GET blog post. */
 router.get('/blog/:number/', function(req, res, next) {
 	var featuredNumber = req.params.number;
 
@@ -299,7 +318,7 @@ router.get('/blog/:number/', function(req, res, next) {
 });
 
 
-/* GET home page. */
+/* GET flash page. */
 router.get('/flashProject/:filename', function(req, res, next) {
 	var filename = req.params.filename;
 	var featuredNumber = 0;
