@@ -272,7 +272,8 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.sidebar .portfolioGrid:hover h2{text-decoration: underline;}
 	#container .sidebar .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
 
-	.sidebar{width: 33.5%; float:right; background-color: #FFF; font-size: .8em; margin: 0;}
+	.sidebar{width: 33.5%; float:right; background-color: #FFF; font-size: .8em; margin: 0; }
+	/*.sidebar{width: 33.5%; float:right; background-color: #FFF; font-size: .8em; margin: 0; height: 700px; overflow-y: scroll; overflow-x: hidden;}*/
 	.inset .blogRoll {width: 66%; float:left; background-color: #FFF; border-right: 1px dotted #CCC;}
 }
 
