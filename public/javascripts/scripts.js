@@ -21,6 +21,7 @@ function resizeIframes(){
 $(document).ready( function() {
 	//Dropdown navigation
 	$( "#menu img" ).click(function() {
+		//alert('clicked');
 		$( "#menu #dropdown" ).slideToggle("drop");
 		$('#menu #dropdown').scrollTo( 0 , 100 );
 	});

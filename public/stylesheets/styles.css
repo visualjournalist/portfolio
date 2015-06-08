@@ -1,6 +1,6 @@
 body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-serif; font-size: 1em;}
 
-
+.capitalize{text-transform: capitalize;}
 
 #menu {background-color: #000; color: #FFF; margin-bottom:0px; padding:0; position: fixed; top:0;width: 100%; border-bottom: 3px #999 solid;z-index: 998;}
 #menu #titleBar{max-width: 1024px; margin: 0 auto;height: 58px;}
