@@ -10,7 +10,9 @@
 		<a href='/portfolio/<%=  global.categories[i] %>/'><li class='capitalize'>&nbsp;• <%=  global.categories[i] %></li></a>
 		<% } %>
 		<a href='/blog/'><li>Blog</li></a>
-		<a href='https://twitter.com/<%= data[0].twitter %>'><li>Twitter</li></a>
-		<a href='https://linkedin.com/in/<%= data[0].linkedin %>/en'><li>LinkedIn</li></a>
+
+		<%if (data[0].twitter!=''){ %><a href='https://twitter.com/<%= data[0].twitter %>'><li class='social'>Twitter: @<%- data[0].twitter %></li></a><% } %>
+		<%if (data[0].email!=''){ %><a href="mailto:<%= data[0].email %>"><li class='social'><span class='label'>Email: </span><%- data[0].email %> </li></a><% } %> 
+		<%if (data[0].linkedin!=''){ %><a href='https://linkedin.com/in/<%= data[0].linkedin %>/en'><li class='social'>LinkedIn</li></a><% } %>
 	</ul>
 </div>

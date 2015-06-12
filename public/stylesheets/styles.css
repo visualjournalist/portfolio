@@ -21,7 +21,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #menu ul a li:hover{background-color: #FFF;}
 #menu ul a {text-decoration: none; color:#000;}
 #menu ul li.tbd{text-decoration: line-through; color:#666;}
-
+#menu ul a li.social {color:#666;}
 #menu #dropdown {display: none; background-color: #FFF; color: #000;}
 
 #navigation #next{position: fixed; right:0; bottom:0; width:40px; height: 100px; background: url('../images/buttonRight.png' ) no-repeat 100% 50%; text-decoration: none;}
@@ -284,7 +284,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.share{float:right;}
 
 	#sharingLinks a{display: block;float:none;}
-	#sharingLinks a#facebook{background: url(../images/share_facebook.jpg)}
+	#sharingLinks a#email{background: url(../images/share_email.png)}
 	#sharingLinks a#linkedin{background: url(../images/share_linkedin.gif)}
 	#sharingLinks a#twitter{background: url(../images/share_twitter_color.gif)}
 
