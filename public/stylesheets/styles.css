@@ -275,6 +275,13 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.sidebar{width: 33.5%; float:right; background-color: #FFF; font-size: .8em; margin: 0; }
 	/*.sidebar{width: 33.5%; float:right; background-color: #FFF; font-size: .8em; margin: 0; height: 700px; overflow-y: scroll; overflow-x: hidden;}*/
 	.inset .blogRoll {width: 66%; float:left; background-color: #FFF; border-right: 1px dotted #CCC;}
+
+	.sidebarInset .square{-webkit-filter: grayscale(1);
+		filter: grayscale(1);}
+	.sidebarInset .square:hover{
+		-webkit-filter: grayscale(0);
+		filter: grayscale(0);
+	}
 }
 
 
