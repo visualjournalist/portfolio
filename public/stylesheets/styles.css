@@ -199,6 +199,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	#container .portfolioGrid .description{float:none;width:100%; margin: 0; padding:0;}
 	#container .portfolioGrid .description h2, #container .portfolioGrid .description h3 {padding:0; width: 100%;}
 	#container .entry .verticalImage {width: 49%; float: left; margin-right:3%;}
+	#container .entry.blog .half {float: left; width: 50% !important; margin: 0 20px 0 0;}
 	.portfolioGrid a {text-decoration: none;}
 	.portfolioGrid:hover h2{text-decoration: underline;}
 	#container .portfolioGrid .square {
