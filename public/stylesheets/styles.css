@@ -292,9 +292,15 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 	.share{float:right;}
 
 	#sharingLinks a{display: block;float:none;}
+/*
 	#sharingLinks a#email{background: url(../images/share_email.png)}
 	#sharingLinks a#linkedin{background: url(../images/share_linkedin.gif)}
 	#sharingLinks a#twitter{background: url(../images/share_twitter_color.gif)}
+*/
+	#sharingLinks a#email{background: url(../images/social_email.png) center / 100%}
+	#sharingLinks a#linkedin{background: url(../images/social_linkedin.png) center / 100%}
+	#sharingLinks a#twitter{background: url(../images/social_twitter.png) center / 100%}
+	#sharingLinks a#github{background: url(../images/social_github.png) center / 100%}
 
 	#sharingLinks{position: fixed; width:1059px; right:auto; top:150px;}
 	#sharingLinks .box{width: 35px;float:right; /*background-color: #999;*/}

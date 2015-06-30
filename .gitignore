@@ -34,6 +34,7 @@ config.js
 
 # Ignore the JPGs from the portfolio
 public/images/*.jpg
+public/images/*.png
 
 # Ignore the SWFs from the portfolio
 public/flash/*.swf
