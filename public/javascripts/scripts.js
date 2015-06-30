@@ -26,7 +26,6 @@ $(document).ready( function() {
 		$('#menu #dropdown').scrollTo( 0 , 100 );
 	});
 	$( "#container" ).click(function() {$('#menu #dropdown').hide();});
-	$( "#titleBar h1 a" ).click(function() {$('#menu #dropdown').hide();});
 
 
 
