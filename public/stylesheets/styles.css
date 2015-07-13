@@ -24,9 +24,9 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #menu ul a li.social {color:#666;}
 #menu #dropdown {display: none; background-color: #FFF; color: #000;}
 
-#navigation #next{position: fixed; right:0; bottom:0; width:40px; height: 100px; background: url('../images/buttonRight.png' ) no-repeat 100% 50%; text-decoration: none;}
+#navigation #next{position: fixed; right:0; bottom:10%; width:40px; height: 100px; background: url('../images/buttonRight.png' ) no-repeat 100% 50%; text-decoration: none;}
 #navigation #next:hover{background: rgba(0, 0, 0, 0) url('../images/buttonRightHover.png') no-repeat 100% 50%; text-decoration: none;}
-#navigation #prev{position: fixed; left:0; bottom:0; width:40px; height: 100px; background: url('../images/buttonLeft.png') no-repeat 0% 50%; text-decoration: none;}
+#navigation #prev{position: fixed; left:0; bottom:10%; width:40px; height: 100px; background: url('../images/buttonLeft.png') no-repeat 0% 50%; text-decoration: none;}
 #navigation #prev:hover{background: url('../images/buttonLeftHover.png')no-repeat 0% 50%; text-decoration: none;}
 
 

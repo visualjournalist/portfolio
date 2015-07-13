@@ -58,7 +58,10 @@ router.get('/', function(req, res, next) {
 	var portfolioData = global.portfolio.sitewide;
 
 
-	var randomProjectNumber = Math.floor(portfolioData.length*Math.random());
+	//Select a random 'recent' project. Recent is defined as the most recent half of the portfolio.
+	//var randomProjectNumber = Math.floor(portfolioData.length*Math.random());
+	var randomProjectNumber = Math.floor( (portfolioData.length/2) * Math.random()) + (portfolioData.length/2);
+
 	var projectData = portfolioData[randomProjectNumber];
 	projectData.descriptionSplit = splitParagraphs(projectData.description);
 	var currentCategory = projectData.category;
