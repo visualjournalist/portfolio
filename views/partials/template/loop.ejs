@@ -1,7 +1,7 @@
 	<% var counter = 0 %>
 	<% for (var i=portfolioData.length-1;i>=0; i--){ %>
 		<% if (portfolioData[i].category==category||category=='showAll'){ %>
-			<% if (counter<loopLimit) { %>
+			<% if (counter<loopLimit&&portfolioData[i].public=='TRUE') { %>
 				<div class='portfolioGrid portfolioPiece' data-portfolio-number=<%= i %> >
 					<a href='/project/<%= portfolioData[i].projectnumber%>'>
 						<!--<a href='/project/<%= portfolioData[i].projectnumber%>/<% encodeURI(portfolioData[i].title) %>'>-->
