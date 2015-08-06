@@ -54,7 +54,7 @@ body{margin: 0; padding:0; background-color: #CCC; font-family: arial, sans-seri
 #container .entry:first-of-type img{width: 100% !important; padding:0;}
 #container .entry:first-of-type h2{font-size:1.8em;}
 
-#container .entry .description p{font-family: serif; line-height: 1.5em;}
+#container .entry .description p{font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; line-height: 1.5em;}
 #container .entry .description p:first-of-type{font-family: sans-serif; font-weight: bold;}
 
 /*#container .entry {width:45%; float:left;margin-right: 1%;}*/

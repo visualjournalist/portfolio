@@ -59,11 +59,12 @@ router.get('/', function(req, res, next) {
 
 
 	//Select a random 'recent' project. Recent is defined as the most recent half of the portfolio.
+    //!!!Need to check that the project is public.
 	//var randomProjectNumber = Math.floor(portfolioData.length*Math.random());
 	var randomProjectNumber = Math.floor( (portfolioData.length/2) * Math.random()) + (portfolioData.length/2);
 
 	var projectData = portfolioData[randomProjectNumber];
-	projectData.descriptionSplit = splitParagraphs(projectData.description);
+    projectData.descriptionSplit = splitParagraphs(projectData.description);
 	var currentCategory = projectData.category;
 
 	var verticalImage = '';

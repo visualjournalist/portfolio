@@ -62,7 +62,7 @@ for (var i = 0; i<sections.length; i++){
 
 
 //Toggle for offline use; ignores Google spreadsheet request. Useful for local dev.
-var offlineMode=false;
+var offlineMode=config.offlineMode;
 
 
 //Add a timer to periodically update data for edits.
@@ -105,7 +105,9 @@ function fetchData(){
 		};
 
 		Tabletop.init(options);
-	}
+	} else {
+        console.log('offlineMode');
+    }
 }
 
 

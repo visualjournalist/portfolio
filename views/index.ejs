@@ -34,7 +34,7 @@
 				<% } else { %>
 					<div class='<%= verticalImage %>'>
 					<a href='<%= projectData.projectlink %>' target='_blank'><img src='/images/<%= projectData.imagebase %>.jpg' <% if (projectData.alttag!=""){ %> alt = '<%= projectData.alttag %>'<% } %>/></a>
-					<div class='credit' style='padding-right:0;'><%= projectData.employer %></div>
+					<div class='credit' <% if(verticalImage=='verticalImage'){%>style='padding-right:0;'<%}%> ><%= projectData.employer %></div>
 					</div>
 				<% } %>
 
