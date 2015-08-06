@@ -15,6 +15,9 @@ config.port = process.env.PORT || '3000';
 //20000 = 20 seconds; 60000 = 1 minute ; 300000 = 5 minutes
 config.timer = 60000;
 
+//Turn off spreadsheets
+config.offlineMode = false;
+
 config.analytics = 'UA-1111111111-1';
 
 module.exports = config;

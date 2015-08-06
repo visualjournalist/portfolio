@@ -65,14 +65,17 @@ for (var i = 0; i<sections.length; i++){
 var offlineMode=config.offlineMode;
 
 
-//Add a timer to periodically update data for edits.
-//20000 = 20 seconds; 60000 = 1 minute ; 300000 = 5 minutes
-setInterval(fetchData, config.timer);
+if (!offlineMode){
+    //Add a timer to periodically update data for edits.
+    //20000 = 20 seconds; 60000 = 1 minute ; 300000 = 5 minutes
+    setInterval(fetchData, config.timer);
+} else {
+    console.log('offlineMode');
+}
 
 
 //Load data from google spreadsheet and write it to JSON files.
 function fetchData(){
-	if (!offlineMode){
 		console.log('loading spreadsheet data.')
 
 		var myData;
@@ -105,9 +108,6 @@ function fetchData(){
 		};
 
 		Tabletop.init(options);
-	} else {
-        console.log('offlineMode');
-    }
 }
 
 
