@@ -39,6 +39,8 @@ public/images/*.png
 # Ignore the SWFs from the portfolio
 public/flash/*.swf
 
+# Ignore the compiled .css file
+public/stylesheets/styles.css
 
 # Ignore Webstorm folder
 /.idea/
