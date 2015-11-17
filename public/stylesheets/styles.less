@@ -1,13 +1,9 @@
 .buttonNextPrev{
+	height: 100px;
 	position: fixed;
-	z-index: 9999;
-	top: 50%;
-}
-.buttonNextPrevDiv{
+		bottom: 10%;
+	text-decoration: none;
 	width: 40px;
-	height: 40px;
-	padding: 0;
-	margin: 0;
 }
 
 @accentColor: orange;
@@ -17,7 +13,6 @@
 @lightGray: #C2C2C2;
 @lightGray2: #CCCCCC;
 @mediumGray: #999999;
-@backgroundPosition: no-repeat center center / cover;
 @maxWidth: 1024px;
 
 
@@ -137,27 +132,20 @@ body {
 }
 
 #navigation #next {
+	.buttonNextPrev;
 	background: url('../images/buttonRight.png' ) no-repeat 100% 50%;
-	height: 100px;
-	position: fixed;
-		bottom: 10%;
-		right: 0;
-	text-decoration: none;
-	width:40px;
+	right: 0;
 }
+
 
 #navigation #next:hover {
 	background: rgba(0, 0, 0, 0) url('../images/buttonRightHover.png') no-repeat 100% 50%;
 	text-decoration: none;
 }
 #navigation #prev {
+	.buttonNextPrev;
 	background: url('../images/buttonLeft.png') no-repeat 0% 50%;
-	height: 100px;
-	position: fixed;
-		left: 0;
-		bottom: 10%;
-	text-decoration: none;
-	width: 40px;
+	left: 0;
 }
 
 #navigation #prev:hover {
@@ -244,7 +232,7 @@ body {
 
 #container .entry .description p:first-of-type {
 	font-family: @textSans;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 
@@ -357,6 +345,7 @@ body {
 	color: #333;
 	font-family: @textSans;
 	font-size: 1em;
+	font-weight: 600;
 	line-height: 1.1em;
 	margin: 5px 0 0 0;
 	padding: 0;
@@ -802,7 +791,6 @@ body {
 
 	#header .column.follow {
 		border-right: none;
-		border-left: 1px dotted #666;
 		display: inline-block;
 		margin-right: 0;
 		padding-right: 0%;
