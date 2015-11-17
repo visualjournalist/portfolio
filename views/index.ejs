@@ -29,7 +29,8 @@
 
 
 				<% if (projectData.videoembed!=""){ %>
-					<iframe width="640" height="360" src="<%= projectData.videoembed %>" frameborder="0" allowfullscreen></iframe>
+					<div class='embed-container'><iframe src="<%= projectData.videoembed %>" frameborder="0" allowfullscreen></iframe></div>
+
 					<div class='credit'><%= projectData.employer %></div>
 				<% } else { %>
 					<div class='<%= verticalImage %>'>

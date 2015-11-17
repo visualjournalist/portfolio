@@ -276,24 +276,83 @@ body {
 }
 
 #container .description {
-	/*margin-top: 10px;*/
 	margin:0;
 	padding:0;
 	width: 100%;
 }
 
-#container .entry h1, #container .entry h2 {font-family: @displaySans; line-height: 1.3em;margin-top:15px;text-align: left; font-weight:normal;}
-#container .entry h2 {font-size: 1.8em;}
-#container .entry p a{padding:0; color: @accentColor;}
-#container .entry p{padding: 0 5%;}
-#container .entry p:first-of-type {font-weight: bold; font-family: @textSans;}
-#container .entry h3.date{color:#CCC; float:right; font-size:.9em; padding-top:5px; font-weight: normal;}
-#container .entry h3.category {text-align: center;text-transform: uppercase; color:#FFF;font-size:.9em;padding-right:5px;padding-left:0;}
-#container .entry h3.category a{padding:0; text-decoration: none; color:#FFF;}
-#container .entry a img, #container .entry iframe{margin: 20px 0 0px 0; padding:0;}
-#container .entry .credit{text-align: right; color:#999; font-size: .7em;padding-right: 7%;}
-#container .entry.blog h2 a {color: #333; text-decoration: none;}
-#container .entry.blog h2 a:hover {color: #333; text-decoration: underline;}
+#container .entry h1,
+#container .entry h2 {
+	font-family: @displaySans;
+	font-weight:normal;
+	line-height: 1.3em;
+	margin-top: 15px;
+	text-align: left;
+}
+
+#container .entry h2 {
+	font-size: 1.8em;
+}
+
+#container .entry p a {
+	color: @accentColor;
+	padding: 0;
+}
+
+#container .entry p {
+	padding: 0 5%;
+}
+
+#container .entry p:first-of-type {
+	font-family: @textSans;
+	font-weight: 600;
+}
+
+#container .entry h3.date {
+	color:#CCC;
+	float: right;
+	font-size: .9em;
+	font-weight: normal;
+	padding-top:5px;
+}
+
+#container .entry h3.category {
+	color: #FFF;
+	font-size: .9em;
+	padding-left: 0;
+	padding-right: 5px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#container .entry h3.category a {
+	color: #FFF;
+	padding: 0;
+	text-decoration: none;
+}
+
+#container .entry a img,
+#container .entry iframe {
+	margin: 20px 0 0px 0;
+	padding: 0;
+}
+
+#container .entry .credit {
+	color: #999;
+	font-size: .7em;
+	padding-right: 7%;
+	text-align: right;
+}
+
+#container .entry.blog h2 a {
+	color: #333;
+	text-decoration: none;
+}
+
+#container .entry.blog h2 a:hover {
+	color: #333;
+	text-decoration: underline;
+}
 
 
 #container .entry ul.listView {
@@ -768,7 +827,7 @@ body {
 		border-top: none;
 		color: @accentColor; 
 		font-family: @textSans;
-		font-weight: bold;
+		font-weight: 600;
 		margin: 0;
 		padding: 8px 0 8px 5%;
 		text-decoration: underline;
