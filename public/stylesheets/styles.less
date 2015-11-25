@@ -6,7 +6,11 @@
 	width: 40px;
 }
 
+@backgroundColor: #FFF;
+@backgroundColorAlt: #F6F6F6;
 @accentColor: orange;
+@textColor: #333;
+@borderColor: #CCC;
 @displaySans: 'Oswald', 'Roboto Slab', arial, sans-serif;
 @textSans: 'Myriad Pro', 'Helvetica', Arial,sans-serif;
 @textSerif: 'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;
@@ -17,20 +21,22 @@
 
 
 body {
-	background-color: #CCC;
+	background-color: @backgroundColor;
 	font-family: @textSans;
 	font-size: 1em;
 	margin: 0;
 	padding: 0;
 }
 
+/*
 .capitalize {
 	text-transform: capitalize;
 }
+*/
 
 #menu {
 	background-color: #000;
-	border-bottom: 3px #999 solid;
+	border-bottom: 3px solid #999;
 	color: #FFF;
 	margin-bottom: 0px;
 	padding: 0;
@@ -532,18 +538,21 @@ body {
 
 /*header*/
 #header {
-	background-color: #333;
-	color: #FFF;
+	background-color: #F6F6F6;
+	color: @textColor;
 	max-width: @maxWidth;
 	margin: 50px auto 0 auto;
 	padding: 30px 0 0 0;
 	overflow: hidden;
 	width: 100%;
+	border-bottom: 1px solid #E1E1E1;
 }
 
+
 #footer {
-	background-color: #333;
-	border-top:1px solid #666;
+	background-color: @backgroundColorAlt;
+	border:1px solid #CCC;
+	border-bottom: none;
 	color: #FFF;
 	max-width: @maxWidth;
 	margin: 0 auto;
@@ -567,7 +576,8 @@ body {
 #header .column ul a li,
 #footer #contactInfo ul a li {
 	background-color: transparent; 
-	color: #FFF;
+	color: @textColor;
+	text-transform: uppercase;
 }
 
 #header .column p {
@@ -589,7 +599,7 @@ body {
 }
 
 #header .column.follow h3 a {
-	color:#999;
+	color: @accentColor;
 	text-decoration: none;
 }
 
@@ -606,18 +616,18 @@ body {
 
 #header .column.follow ul a li,
 #footer #contactInfo ul a li {
-	border-top: 1px dotted #666;
+	border-top: 1px solid #E1E1E1;
 	padding: 10px 0 10px 20px;
 	width: 100%;
 }
 
 #header .column.follow ul a:last-of-type li {
-	border-bottom: 1px dotted  #666;
+	border-bottom: 1px solid #E1E1E1;
 }
 
 #header .column.follow ul a:hover li,
 #footer #contactInfo ul a:hover li {
-	background-color: #999;
+	background-color: #CCC;
 }
 
 #header .column.follow ul a,
@@ -637,7 +647,7 @@ body {
 }
 
 #header .column.bio p a {
-	color: #FFF;
+	color: @accentColor;
 }
 
 .sidebar {
@@ -706,6 +716,10 @@ body {
 	left: 0; 
 	width: 100%; 
 	height: 100%;
+}
+
+.entry .description ul li {
+	padding-bottom: 1em;
 }
 
 /* youtube embeds -------------  */
@@ -862,7 +876,7 @@ body {
 	}
 
 	#header .column.bio {
-		border-right: 1px solid #666;
+		border-right: 1px solid @borderColor;
 		margin-left: 5%;
 		margin-bottom: -99999px;
 		margin-right: 0;
@@ -906,7 +920,7 @@ body {
 	}
 
 	#footer #contactInfo ul a {
-		color: #FFF;
+		color: #999;
 	}
 
 	#footer #contactInfo h3 {
@@ -1031,6 +1045,11 @@ body {
 		-webkit-filter: grayscale(0);
 		filter: grayscale(0);
 	}
+
+	#header, #container{
+		border-right: 1px solid @borderColor;
+		border-left: 1px solid @borderColor;
+	}
 }
 
 
@@ -1043,6 +1062,7 @@ body {
 	#sharingLinks a {
 		display: block;
 		float:none;
+		border-left: 1px solid #CCC;
 	}
 
 	#sharingLinks a#email {background: url(../images/social_email.png) center / 100%; }
